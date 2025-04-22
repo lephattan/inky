@@ -45,11 +45,11 @@ describe('Center', () => {
 
     var expected = `
       <center>
-        <table align="center" class="menu float-center">
+        <table role="presentation" align="center" class="menu float-center">
           <tbody>
             <tr>
               <td>
-                <table>
+                <table role="presentation">
                   <tbody>
                     <tr>
                       <th class="menu-item float-center"><a href="#"></a></th>
@@ -71,11 +71,11 @@ describe('Button', () => {
   it('creates a simple button', () => {
     var input = '<button href="http://zurb.com">Button</button>';
     var expected = `
-      <table class="button">
+      <table role="presentation" class="button">
         <tbody>
           <tr>
             <td>
-              <table>
+              <table role="presentation">
                 <tbody>
                   <tr>
                     <td><a href="http://zurb.com">Button</a></td>
@@ -94,11 +94,11 @@ describe('Button', () => {
   it('creates a button with target="_blank" attribute', () => {
     var input = '<button href="http://zurb.com" target="_blank">Button</button>';
     var expected = `
-      <table class="button">
+      <table role="presentation" class="button">
         <tbody>
           <tr>
             <td>
-              <table>
+              <table role="presentation">
                 <tbody>
                   <tr>
                     <td><a href="http://zurb.com" target="_blank">Button</a></td>
@@ -119,11 +119,11 @@ describe('Button', () => {
       <button class="small alert" href="http://zurb.com">Button</button>
     `;
     var expected = `
-      <table class="button small alert">
+      <table role="presentation" class="button small alert">
         <tbody>
           <tr>
             <td>
-              <table>
+              <table role="presentation">
                 <tbody>
                   <tr>
                     <td><a href="http://zurb.com">Button</a></td>
@@ -144,11 +144,11 @@ describe('Button', () => {
       <button class="expand" href="http://zurb.com">Button</button>
     `;
     var expected = `
-      <table class="button expand">
+      <table role="presentation" class="button expand">
         <tbody>
           <tr>
             <td>
-              <table>
+              <table role="presentation">
                 <tbody>
                   <tr>
                     <td>
@@ -176,11 +176,11 @@ describe('Menu', () => {
       </menu>
     `;
     var expected = `
-      <table class="menu">
+      <table role="presentation" class="menu">
         <tbody>
           <tr>
             <td>
-              <table>
+              <table role="presentation">
                 <tbody>
                   <tr>
                     <th class="menu-item"><a href="http://zurb.com">Item</a></th>
@@ -203,11 +203,11 @@ describe('Menu', () => {
       </menu>
     `;
     var expected = `
-      <table class="menu">
+      <table role="presentation" class="menu">
         <tbody>
           <tr>
             <td>
-              <table>
+              <table role="presentation">
                 <tbody>
                   <tr>
                     <th class="menu-item"><a href="http://zurb.com" target="_blank">Item</a></th>
@@ -229,11 +229,11 @@ describe('Menu', () => {
       </menu>
     `;
     var expected = `
-      <table class="menu vertical">
+      <table role="presentation" class="menu vertical">
         <tbody>
           <tr>
             <td>
-              <table>
+              <table role="presentation">
                 <tbody>
                   <tr>
                   </tr>
@@ -255,11 +255,11 @@ describe('Menu', () => {
       </menu>
     `;
     var expected = `
-      <table class="menu">
+      <table role="presentation" class="menu">
         <tbody>
           <tr>
             <td>
-              <table>
+              <table role="presentation">
                 <tbody>
                   <tr>
                     <th class="menu-item"><a href="http://zurb.com">Item 1</a></th>
@@ -280,7 +280,7 @@ describe('Callout', () => {
   it('creates a callout with correct syntax', () => {
     var input = '<callout>Callout</callout>';
     var expected = `
-      <table class="callout">
+      <table role="presentation" class="callout">
         <tbody>
           <tr>
             <th class="callout-inner">Callout</th>
@@ -296,7 +296,7 @@ describe('Callout', () => {
   it('copies classes to the final HTML', () => {
     var input = '<callout class="primary">Callout</callout>';
     var expected = `
-      <table class="callout">
+      <table role="presentation" class="callout">
         <tbody>
           <tr>
             <th class="callout-inner primary">Callout</th>
@@ -314,7 +314,7 @@ describe('Spacer', () => {
   it('creates a spacer element with correct size', () => {
     var input = '<spacer size="10"></spacer>';
     var expected = `
-      <table class="spacer">
+      <table role="presentation" class="spacer">
         <tbody>
           <tr>
             <td height="10" style="font-size:10px;line-height:10px;">&nbsp;</td>
@@ -330,7 +330,7 @@ describe('Spacer', () => {
   it('creates a spacer with a default size or no size defined', () => {
     var input = '<spacer></spacer>';
     var expected = `
-      <table class="spacer">
+      <table role="presentation" class="spacer">
         <tbody>
           <tr>
             <td height="16" style="font-size:16px;line-height:16px;">&nbsp;</td>
@@ -345,7 +345,7 @@ describe('Spacer', () => {
   it('creates a spacer element for small screens with correct size', () => {
     var input = '<spacer size-sm="10"></spacer>';
     var expected = `
-      <table class="spacer hide-for-large">
+      <table role="presentation" class="spacer hide-for-large">
         <tbody>
           <tr>
             <td height="10" style="font-size:10px;line-height:10px;">&nbsp;</td>
@@ -360,7 +360,7 @@ describe('Spacer', () => {
   it('creates a spacer element for large screens with correct size', () => {
     var input = '<spacer size-lg="20"></spacer>';
     var expected = `
-      <table class="spacer show-for-large">
+      <table role="presentation" class="spacer show-for-large">
         <tbody>
           <tr>
             <td height="20" style="font-size:20px;line-height:20px;">&nbsp;</td>
@@ -375,14 +375,14 @@ describe('Spacer', () => {
   it('creates a spacer element for small and large screens with correct sizes', () => {
     var input = '<spacer size-sm="10" size-lg="20"></spacer>';
     var expected = `
-      <table class="spacer hide-for-large">
+      <table role="presentation" class="spacer hide-for-large">
         <tbody>
           <tr>
             <td height="10" style="font-size:10px;line-height:10px;">&nbsp;</td>
           </tr>
         </tbody>
       </table>
-      <table class="spacer show-for-large">
+      <table role="presentation" class="spacer show-for-large">
         <tbody>
           <tr>
             <td height="20" style="font-size:20px;line-height:20px;">&nbsp;</td>
@@ -397,7 +397,7 @@ describe('Spacer', () => {
   it('copies classes to the final spacer HTML', () => {
     var input = '<spacer size="10" class="bgcolor"></spacer>';
     var expected = `
-      <table class="spacer bgcolor">
+      <table role="presentation" class="spacer bgcolor">
         <tbody>
           <tr>
             <td height="10" style="font-size:10px;line-height:10px;">&nbsp;</td>
@@ -414,7 +414,7 @@ describe('wrapper', () => {
   it('creates a wrapper that you can attach classes to', () => {
     var input = `<wrapper class="header"></wrapper>`;
     var expected = `
-      <table class="wrapper header" align="center">
+      <table role="presentation" class="wrapper header" align="center">
         <tbody>
           <tr>
             <td class="wrapper-inner"></td>
@@ -431,7 +431,7 @@ describe('h-line', () => {
   it('creates a horizontal rule that you can attach classes to', () => {
     var input = `<h-line class="dotted">`;
     var expected = `
-      <table class="h-line dotted">
+      <table role="presentation" class="h-line dotted">
         <tr>
           <th>&nbsp;</th>
         </tr>
